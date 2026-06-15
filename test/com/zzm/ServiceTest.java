@@ -12,9 +12,17 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
+/**
+ * Service 纯 Java 测试模块。
+ * 不依赖第三方测试框架，通过 main 方法依次调用测试用例并用自定义断言验证结果。
+ */
 public class ServiceTest {
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-M-d H:m:s");
 
+    /**
+     * 测试入口。
+     * 逐项执行创建、校验、查询、完成、状态扫描、持久化、删除和集合保护测试。
+     */
     public static void main(String[] args) throws IOException {
         testCreateTaskSuccess();
         testCreateTaskValidation();
